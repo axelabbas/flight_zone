@@ -18,12 +18,12 @@ class LocationCard extends StatelessWidget {
       Container(
         decoration: BoxDecoration(
           border: Border.all(
-            color: MyColors.bgGrey,
+            color: Colors.black.withOpacity(.5),
             width: 1,
           ),
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
-            image: AssetImage(imagePath),
+            image: NetworkImage(imagePath),
             fit: BoxFit.cover,
           ),
         ),
@@ -33,7 +33,9 @@ class LocationCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
             colors: [
-              MyColors.bgGrey.withOpacity(.1),
+              MyColors.bgGrey.withOpacity(0),
+              MyColors.bgGrey.withOpacity(0.2),
+              MyColors.bgGrey.withOpacity(.5),
               MyColors.bgGrey,
             ],
             begin: Alignment.topCenter,
@@ -52,13 +54,13 @@ class LocationCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: MyTextStyles.bold12.copyWith(
+                style: MyTextStyles.bold14.copyWith(
                   color: Colors.white,
                 ),
               ),
               Text(
                 subTitle,
-                style: MyTextStyles.regular10.copyWith(
+                style: MyTextStyles.regular12.copyWith(
                   color: MyColors.textGrey,
                 ),
               ),

@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                const TicketsViewer(),
+                TicketsViewer(),
                 SizedBox(
                   height: 15.h,
                 ),
@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                const LocationsGrid(),
+                LocationsGrid(),
               ]),
         ),
       ),
