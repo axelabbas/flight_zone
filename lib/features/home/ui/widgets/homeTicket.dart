@@ -21,11 +21,13 @@ class HomeTicket extends StatelessWidget {
   final EdgeInsetsGeometry padding = EdgeInsets.all(15.sp);
   final Widget bottomRow = Padding(
     padding: EdgeInsets.symmetric(horizontal: 15.0.w, vertical: 10.h),
-    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Text('الخطوط الجويه العراقيه',
-          style: TextStyle(color: Colors.white, fontSize: 12.sp)),
-      Text('\$200', style: MyTextStyles.bold12),
-    ]),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text('الخطوط الجويه العراقيه', style: MyTextStyles.regular12),
+        Text('\$200', style: MyTextStyles.bold14),
+      ],
+    ),
   );
 
   @override

@@ -67,7 +67,7 @@ class TicketShape extends StatelessWidget {
                       ),
                       Text(
                         fromLong,
-                        style: MyTextStyles.regular8,
+                        style: MyTextStyles.regular12,
                       ),
                     ],
                   ),
@@ -77,7 +77,7 @@ class TicketShape extends StatelessWidget {
                     children: [
                       Text(
                         "2h",
-                        style: MyTextStyles.regular8
+                        style: MyTextStyles.regular12
                             .copyWith(color: MyColors.textGrey),
                       ),
                       Row(
@@ -85,7 +85,7 @@ class TicketShape extends StatelessWidget {
                           Icon(
                             Icons.circle,
                             color: MyColors.primaryGreen,
-                            size: 8.sp,
+                            size: 10.sp,
                           ),
                           SizedBox(
                               width: width / 4,
@@ -98,13 +98,13 @@ class TicketShape extends StatelessWidget {
                               child: Icon(
                                 Icons.airplanemode_active,
                                 color: MyColors.primaryGreen,
-                                size: 14.sp,
+                                size: 18.sp,
                               )),
                         ],
                       ),
                       Text(
                         "35km",
-                        style: MyTextStyles.regular10
+                        style: MyTextStyles.regular12
                             .copyWith(color: MyColors.textGrey),
                       ),
                     ],
@@ -121,7 +121,7 @@ class TicketShape extends StatelessWidget {
                       ),
                       Text(
                         toLong,
-                        style: MyTextStyles.regular8,
+                        style: MyTextStyles.regular12,
                       ),
                     ],
                   ),
@@ -138,12 +138,12 @@ class TicketShape extends StatelessWidget {
                     children: [
                       Text(
                         "التاريخ",
-                        style: MyTextStyles.regular8
+                        style: MyTextStyles.regular10
                             .copyWith(color: MyColors.textGrey),
                       ),
                       Text(
                         date,
-                        style: MyTextStyles.regular12,
+                        style: MyTextStyles.regular14,
                       ),
                     ],
                   ),
@@ -152,12 +152,12 @@ class TicketShape extends StatelessWidget {
                     children: [
                       Text(
                         "رقم الرحله",
-                        style: MyTextStyles.regular8
+                        style: MyTextStyles.regular10
                             .copyWith(color: MyColors.textGrey),
                       ),
                       Text(
                         flightNumber,
-                        style: MyTextStyles.regular12,
+                        style: MyTextStyles.regular14,
                       ),
                     ],
                   ),

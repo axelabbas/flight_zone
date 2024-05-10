@@ -30,6 +30,10 @@ class MyTextStyles {
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
   );
+  static TextStyle bold18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.bold,
+  );
   static TextStyle bold16 = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.bold,

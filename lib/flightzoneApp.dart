@@ -11,6 +11,7 @@ class FlightzoneApp extends StatelessWidget {
       designSize: Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flightzone',
         theme: ThemeData(
           fontFamily: "IBM",
