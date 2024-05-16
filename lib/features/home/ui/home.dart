@@ -1,6 +1,7 @@
+import 'package:flight_zone/core/routing/routes.dart';
 import 'package:flight_zone/core/themes/Colors.dart';
 import 'package:flight_zone/core/themes/Styles.dart';
-import 'package:flight_zone/features/home/ui/widgets/customAppBar.dart';
+import 'package:flight_zone/core/widgets/customAppBar.dart';
 import 'package:flight_zone/features/home/ui/widgets/locationsGrid.dart';
 import 'package:flight_zone/features/home/ui/widgets/searchBar.dart';
 import 'package:flight_zone/features/home/ui/widgets/ticketsViewer.dart';
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.bgBlack,
+      appBar: LogoAppbar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const MyAppBar(),
+                // const MyAppBar(),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -113,7 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(Routes.login);
+                        },
                         child: Text(
                           "عرض الكل",
                           style: MyTextStyles.regular12.copyWith(

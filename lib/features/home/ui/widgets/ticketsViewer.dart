@@ -12,16 +12,16 @@ class TicketsViewer extends StatelessWidget {
   "status": "نجاح",
   "data": [
     {
-      "fromAirPort": "CDG",
-      "fromCity": "باريس",
+      "fromAirPort": "مطار بغداد",
+      "fromCity": "بغداد",
       "date": "6/25 , 11:30 ص",
       "flightNumber": "A1252B49",
       "time": "2 ساعة",
       "distance": "35 كم",
-      "flyingCompany": "الخطوط الجوية الفرنسية",
+      "flyingCompany": "الخطوط الجوية العراقية",
       "price": "\$250",
-      "toAirPort": "JFK",
-      "toCity": "نيويورك"
+      "toAirPort": "مطار اتاتورك",
+      "toCity": "اسطنبول"
     },
     {
       "fromAirPort": "FCO",

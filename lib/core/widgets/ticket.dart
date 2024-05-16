@@ -60,7 +60,7 @@ class TicketShape extends StatelessWidget {
                     children: [
                       Text(
                         fromShort,
-                        style: MyTextStyles.bold14,
+                        style: MyTextStyles.bold14.copyWith(letterSpacing: 1.2),
                       ),
                       SizedBox(
                         height: 5.h,
@@ -114,7 +114,7 @@ class TicketShape extends StatelessWidget {
                     children: [
                       Text(
                         toShort,
-                        style: MyTextStyles.bold14,
+                        style: MyTextStyles.bold14.copyWith(letterSpacing: 1.2),
                       ),
                       SizedBox(
                         height: 5.h,

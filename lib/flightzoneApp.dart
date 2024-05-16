@@ -1,9 +1,11 @@
-import 'package:flight_zone/features/home/ui/home.dart';
+import 'package:flight_zone/core/routing/router.dart';
+import 'package:flight_zone/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FlightzoneApp extends StatelessWidget {
-  const FlightzoneApp({super.key});
+  final AppRouter appRouter = AppRouter();
+  FlightzoneApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +25,10 @@ class FlightzoneApp extends StatelessWidget {
             displayColor: Colors.white,
           ),
         ),
-        home: const Directionality(
-            textDirection: TextDirection.rtl, child: HomeScreen()),
+        onGenerateRoute: appRouter.generateRoute,
+        initialRoute: Routes.bnb,
+        // home: const Directionality(
+        //     textDirection: TextDirection.rtl, child: HomeScreen()),
       ),
     );
   }
