@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flight_zone/core/routing/routes.dart';
 import 'package:flight_zone/features/home/ui/widgets/homeTicket.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,17 +66,23 @@ class TicketsViewer extends StatelessWidget {
           var currentData = data["data"][index];
           return Padding(
             padding: EdgeInsets.only(left: 20.w),
-            child: Center(
-                child: HomeTicket(
-              fromShort: currentData["fromAirPort"],
-              fromLong: currentData["fromCity"],
-              toShort: currentData["toAirPort"],
-              toLong: currentData["toCity"],
-              flightNumber: currentData["flightNumber"],
-              date: currentData["date"],
-              flyingCompany: currentData["flyingCompany"],
-              price: currentData["price"],
-            )),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.flightDetails,
+                    arguments: currentData);
+              },
+              child: Center(
+                  child: HomeTicket(
+                fromShort: currentData["fromAirPort"],
+                fromLong: currentData["fromCity"],
+                toShort: currentData["toAirPort"],
+                toLong: currentData["toCity"],
+                flightNumber: currentData["flightNumber"],
+                date: currentData["date"],
+                flyingCompany: currentData["flyingCompany"],
+                price: currentData["price"],
+              )),
+            ),
           );
         },
       ),
