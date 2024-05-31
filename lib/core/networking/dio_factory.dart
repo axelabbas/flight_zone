@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flight_zone/core/networking/api_constants.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
   // cant make an object of this class
@@ -13,12 +14,14 @@ class DioFactory {
       dio.options.baseUrl = ApiConstants.baseUrl;
       dio.options.connectTimeout = const Duration(seconds: 30);
       dio.options.receiveTimeout = const Duration(seconds: 30);
-      dio.interceptors.add(LogInterceptor(
+      dio.interceptors.add(PrettyDioLogger(
           requestBody: true,
           requestHeader: true,
           responseHeader: true,
           responseBody: true));
+      return dio;
+    } else {
+      return dio!;
     }
-    return dio!;
   }
 }

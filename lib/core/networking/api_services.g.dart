@@ -13,7 +13,7 @@ class _ApiServices implements ApiServices {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://localhost:4000/';
+    baseUrl ??= 'http://192.168.137.1:4000/';
   }
 
   final Dio _dio;
@@ -34,7 +34,7 @@ class _ApiServices implements ApiServices {
     )
             .compose(
               _dio.options,
-              'availableflights',
+              'available-flights',
               queryParameters: queryParameters,
               data: _data,
             )

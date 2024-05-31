@@ -2,10 +2,13 @@ import 'package:flight_zone/core/routing/routes.dart';
 import 'package:flight_zone/core/themes/Colors.dart';
 import 'package:flight_zone/core/themes/Styles.dart';
 import 'package:flight_zone/core/widgets/customAppBar.dart';
+import 'package:flight_zone/features/home/logic/cubit/flights_cubit.dart';
+import 'package:flight_zone/features/home/logic/cubit/flights_state.dart';
 import 'package:flight_zone/features/home/ui/widgets/locationsGrid.dart';
 import 'package:flight_zone/features/home/ui/widgets/searchBar.dart';
 import 'package:flight_zone/features/home/ui/widgets/ticketsViewer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,6 +19,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,9 +139,47 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 LocationsGrid(),
+                BlocListener<FlightsCubit, FlightsState>(
+                  listenWhen: (previous, current) =>
+                      current is Loading ||
+                      current is Success ||
+                      current is Error,
+                  listener: (context, state) {
+                    state.whenOrNull(
+                      loading: () {
+                        print("loading");
+
+                        showDialog(
+                          context: context,
+                          builder: (context) => const Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        );
+                      },
+                      success: (loginResponse) {
+                        print("DONEE YIPPIEES");
+                      },
+                      error: (error) {
+                        print("$error");
+
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              Center(child: Text("error $error")),
+                        );
+                      },
+                    );
+                  },
+                  child: const SizedBox.shrink(),
+                ),
               ]),
         ),
       ),
     );
+  }
+
+  void getData() {
+    print('Getting data');
+    context.read<FlightsCubit>().emitFlightStates();
   }
 }

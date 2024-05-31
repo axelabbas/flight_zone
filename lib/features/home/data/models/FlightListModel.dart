@@ -7,13 +7,11 @@ class FlightListModel {
   String? message;
   List<AvailableFlightModel>? data;
   int? code;
-  bool? status;
 
   FlightListModel({
     this.message,
     this.data,
     this.code,
-    this.status,
   });
 
   factory FlightListModel.fromJson(Map<String, dynamic> json) =>
@@ -22,15 +20,25 @@ class FlightListModel {
 
 @JsonSerializable()
 class AvailableFlightModel {
+  @JsonKey(name: 'from_airport')
   String? fromAirPort;
+  @JsonKey(name: 'from_city')
   String? fromCity;
+  @JsonKey(name: 'date_time')
   String? date;
+  @JsonKey(name: 'flight_number')
   String? flightNumber;
-  String? time;
-  String? distance;
-  String? flyingCompany;
-  String? price;
+  @JsonKey(name: 'flight_duration')
+  String? duration;
+  @JsonKey(name: 'distance_km')
+  int? distance;
+  @JsonKey(name: 'airline_name')
+  String? airlineName;
+  @JsonKey(name: 'price_USD')
+  int? price;
+  @JsonKey(name: 'to_airport')
   String? toAirPort;
+  @JsonKey(name: 'to_city')
   String? toCity;
 
   AvailableFlightModel({
@@ -38,9 +46,9 @@ class AvailableFlightModel {
     this.fromCity,
     this.date,
     this.flightNumber,
-    this.time,
+    this.duration,
     this.distance,
-    this.flyingCompany,
+    this.airlineName,
     this.price,
     this.toAirPort,
     this.toCity,

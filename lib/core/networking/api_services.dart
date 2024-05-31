@@ -5,7 +5,7 @@ import 'package:retrofit/retrofit.dart';
 
 part 'api_services.g.dart';
 
-@RestApi(baseUrl: ApiConstants.baseUrl)
+@RestApi(baseUrl: ApiConstants.baseUrl, )
 abstract class ApiServices {
   // injecting dio into the services, meaning we will use services to make api calls
   factory ApiServices(Dio dio, {String baseUrl}) = _ApiServices;

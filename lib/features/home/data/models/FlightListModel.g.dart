@@ -13,7 +13,6 @@ FlightListModel _$FlightListModelFromJson(Map<String, dynamic> json) =>
           ?.map((e) => AvailableFlightModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       code: (json['code'] as num?)?.toInt(),
-      status: json['status'] as bool?,
     );
 
 Map<String, dynamic> _$FlightListModelToJson(FlightListModel instance) =>
@@ -21,35 +20,34 @@ Map<String, dynamic> _$FlightListModelToJson(FlightListModel instance) =>
       'message': instance.message,
       'data': instance.data,
       'code': instance.code,
-      'status': instance.status,
     };
 
 AvailableFlightModel _$AvailableFlightModelFromJson(
         Map<String, dynamic> json) =>
     AvailableFlightModel(
-      fromAirPort: json['fromAirPort'] as String?,
-      fromCity: json['fromCity'] as String?,
-      date: json['date'] as String?,
-      flightNumber: json['flightNumber'] as String?,
-      time: json['time'] as String?,
-      distance: json['distance'] as String?,
-      flyingCompany: json['flyingCompany'] as String?,
-      price: json['price'] as String?,
-      toAirPort: json['toAirPort'] as String?,
-      toCity: json['toCity'] as String?,
+      fromAirPort: json['from_airport'] as String?,
+      fromCity: json['from_city'] as String?,
+      date: json['date_time'] as String?,
+      flightNumber: json['flight_number'] as String?,
+      duration: json['flight_duration'] as String?,
+      distance: (json['distance_km'] as num?)?.toInt(),
+      airlineName: json['airline_name'] as String?,
+      price: (json['price_USD'] as num?)?.toInt(),
+      toAirPort: json['to_airport'] as String?,
+      toCity: json['to_city'] as String?,
     );
 
 Map<String, dynamic> _$AvailableFlightModelToJson(
         AvailableFlightModel instance) =>
     <String, dynamic>{
-      'fromAirPort': instance.fromAirPort,
-      'fromCity': instance.fromCity,
-      'date': instance.date,
-      'flightNumber': instance.flightNumber,
-      'time': instance.time,
-      'distance': instance.distance,
-      'flyingCompany': instance.flyingCompany,
-      'price': instance.price,
-      'toAirPort': instance.toAirPort,
-      'toCity': instance.toCity,
+      'from_airport': instance.fromAirPort,
+      'from_city': instance.fromCity,
+      'date_time': instance.date,
+      'flight_number': instance.flightNumber,
+      'flight_duration': instance.duration,
+      'distance_km': instance.distance,
+      'airline_name': instance.airlineName,
+      'price_USD': instance.price,
+      'to_airport': instance.toAirPort,
+      'to_city': instance.toCity,
     };
