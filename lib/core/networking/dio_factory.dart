@@ -15,10 +15,7 @@ class DioFactory {
       dio.options.connectTimeout = const Duration(seconds: 30);
       dio.options.receiveTimeout = const Duration(seconds: 30);
       dio.interceptors.add(PrettyDioLogger(
-          requestBody: true,
-          requestHeader: true,
-          responseHeader: true,
-          responseBody: true));
+          request: true, requestBody: true, responseBody: true));
       return dio;
     } else {
       return dio!;

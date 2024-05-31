@@ -3,6 +3,8 @@ import 'package:flight_zone/core/networking/api_services.dart';
 import 'package:flight_zone/core/networking/dio_factory.dart';
 import 'package:flight_zone/features/home/data/repos/flights_repo.dart';
 import 'package:flight_zone/features/home/logic/cubit/flights_cubit.dart';
+import 'package:flight_zone/features/login/data/repos/loginRepo.dart';
+import 'package:flight_zone/features/login/logic/cubit/login_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -17,4 +19,9 @@ Future setupInjection() async {
   getIt.registerLazySingleton<FlightsRepo>(() => FlightsRepo(getIt()));
   // Registering the flights cubit
   getIt.registerLazySingleton<FlightsCubit>(() => FlightsCubit(getIt()));
+
+  // Registering the login repo
+  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  // register the login cubit
+  getIt.registerLazySingleton<LoginCubit>(() => LoginCubit(getIt()));
 }
